@@ -1,0 +1,436 @@
+/* Main application styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    background: #0f0f1a;
+}
+
+#main-app {
+    display: none;
+    min-height: 100vh;
+}
+
+.navbar {
+    background: rgba(15, 15, 26, 0.9);
+    backdrop-filter: blur(10px);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    background: linear-gradient(90deg, #ff8a00 0%, #e52e71 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-link {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover, .nav-link.active {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.page-container {
+    padding: 2rem;
+}
+
+/* Common card styles */
+.card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+.card label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #ff8a00;
+}
+
+.card input {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    color: white;
+    font-size: 1rem;
+}
+
+.card button {
+    width: 100%;
+    padding: 0.8rem;
+    background: linear-gradient(90deg, #ff8a00 0%, #e52e71 100%);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.card button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(229, 46, 113, 0.4);
+}
+
+.card p {
+    margin-top: 1rem;
+    line-height: 1.6;
+}
+
+/* Common page title styles */
+.page-title {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    background: linear-gradient(90deg, #ff8a00 0%, #e52e71 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-align: center;
+}
+
+/* Common cards container */
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+/* Collection section styles */
+.collection-section {
+    margin-bottom: 3rem;
+}
+
+.collection-section h2 {
+    color: #ff8a00;
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 0.5rem;
+}
+
+/* Method table styles */
+.method-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+}
+
+.method-table th, .method-table td {
+    padding: 0.8rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: left;
+}
+
+.method-table th {
+    background: rgba(255, 138, 0, 0.1);
+    color: #ff8a00;
+}
+
+/* Code example styles */
+.code-example {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 1rem;
+    border-radius: 5px;
+    font-family: 'Courier New', monospace;
+    overflow-x: auto;
+    margin: 1rem 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 1rem;
+    }
+    .nav-links {
+        margin-top: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+/* Collections Playground Specific Styles */
+.collection-selector {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    color: white;
+    font-size: 1rem;
+}
+
+.operation-buttons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.operation-buttons button {
+    padding: 0.6rem;
+    font-size: 0.9rem;
+}
+
+.visualization {
+    min-height: 200px;
+    max-height: 300px;
+    overflow-y: auto;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.collection-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.collection-item {
+    padding: 0.5rem;
+    background: rgba(255, 138, 0, 0.1);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.collection-item.highlight {
+    background: rgba(76, 175, 80, 0.3);
+    transform: scale(1.02);
+}
+
+.map-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.map-table th, .map-table td {
+    padding: 0.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: left;
+}
+
+.map-table th {
+    background: rgba(255, 138, 0, 0.2);
+}
+
+.map-table td.highlight {
+    background: rgba(76, 175, 80, 0.3);
+}
+
+.performance-metrics {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+}
+
+.code-generator {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.code-generator button {
+    align-self: flex-start;
+}
+
+.benchmark-tool {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.benchmark-results {
+    margin-top: 1rem;
+}
+
+.benchmark-bar-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.benchmark-bar-label {
+    width: 100px;
+    font-weight: 600;
+}
+
+.benchmark-bar {
+    height: 20px;
+    background: #ff8a00;
+    transition: width 0.5s ease;
+}
+
+.benchmark-time {
+    margin-left: 1rem;
+    min-width: 60px;
+}
+
+/* ===== Enhanced Collection Visualization ===== */
+.visualization {
+    min-height: 200px;
+    max-height: 300px;
+    overflow-y: auto;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.collection-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.collection-item {
+    padding: 0.5rem 1rem;
+    background: rgba(255, 138, 0, 0.1);
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+}
+
+.collection-item.highlight {
+    background: rgba(76, 175, 80, 0.3);
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
+}
+
+/* ===== Enhanced Map Visualization ===== */
+.map-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+.map-table th {
+    position: sticky;
+    top: 0;
+    background: rgba(15, 15, 26, 0.9);
+}
+
+.map-table tr:nth-child(even) {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.map-table td.highlight {
+    animation: highlight-fade 2s ease-out;
+}
+
+@keyframes highlight-fade {
+    0% { background: rgba(76, 175, 80, 0.5); }
+    100% { background: rgba(76, 175, 80, 0.1); }
+}
+
+/* ===== Benchmark Improvements ===== */
+.benchmark-bar {
+    height: 25px;
+    background: linear-gradient(90deg, #ff8a00, #e52e71);
+    transition: width 0.8s ease-out;
+    border-radius: 4px;
+    margin-right: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.benchmark-bar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0.1) 0%,
+        rgba(255, 255, 255, 0.3) 50%,
+        rgba(255, 255, 255, 0.1) 100%
+    );
+    background-size: 200% 100%;
+    animation: shine 2s infinite;
+}
+
+@keyframes shine {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+/* ===== Copy Status Styles ===== */
+#copyStatus {
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 4px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+#copyStatus.success {
+    background: rgba(76, 175, 80, 0.2);
+    color: #4CAF50;
+}
+
+#copyStatus.error {
+    background: rgba(244, 67, 54, 0.2);
+    color: #F44336;
+}
+
+/* ===== Input Validation Styles ===== */
+.input-error {
+    animation: shake 0.5s;
+    border-color: #F44336 !important;
+    box-shadow: 0 0 5px rgba(244, 67, 54, 0.5);
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-5px); }
+    40%, 80% { transform: translateX(5px); }
+}
