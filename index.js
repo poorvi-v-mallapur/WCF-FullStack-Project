@@ -7,9 +7,12 @@ const PORT = process.env.PORT || 3000;
 // Serve static files from the root and subfolders
 app.use(express.static(__dirname));
 
-// Optional: If you want to serve index.html for all unknown routes (SPA support)
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'index.html'));
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'index.html'), err => {
+    if (err) {
+      res.status(404).send('index.html not found');
+    }
+  });
 });
 
 app.listen(PORT, () => {
