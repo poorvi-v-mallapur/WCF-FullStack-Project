@@ -1,0 +1,110 @@
+<div class="java-collections">
+    <h1 class="page-title">Collections Playground 🧩</h1>
+
+    <div class="cards-container">
+        <div class="card">
+            <h2>Collection Type</h2>
+            <select id="collectionType" class="collection-selector">
+                <option value="arraylist">ArrayList</option>
+                <option value="linkedlist">LinkedList</option>
+                <option value="hashset">HashSet</option>
+                <option value="treeset">TreeSet</option>
+                <option value="hashmap">HashMap</option>
+                <option value="treemap">TreeMap</option>
+            </select>
+
+            <div class="collection-operations">
+                <h3>Operations</h3>
+                <div class="operation-buttons">
+                    <button data-action="add">Add Element</button>
+                    <button data-action="remove">Remove Element</button>
+                    <button data-action="search">Search</button>
+                    <button data-action="clear">Clear</button>
+                    <button data-action="sort" id="sortBtn" disabled>Sort</button>
+                </div>
+
+                <div class="element-input">
+                    <label for="elementValue">Element Value:</label>
+                    <input type="text" id="elementValue" placeholder="Enter value">
+
+                    <div id="mapInputs" style="display:none">
+                        <label for="keyValue">Key:</label>
+                        <input type="text" id="keyValue" placeholder="Enter key">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Visualization</h2>
+            <div class="visualization-container">
+                <div id="collectionVisualization" class="visualization">
+                    <p>Collection will appear here</p>
+                </div>
+                <div class="performance-metrics">
+                    <h4>Operation Performance</h4>
+                    <p id="timeComplexity">Time Complexity: </p>
+                    <p id="operationTime">Last operation: 0ms</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Code Generator</h2>
+            <div class="code-generator">
+                <div class="code-example" id="generatedCode">
+                    // Generated code will appear here
+                </div>
+                <button data-action="updateCode">Update Code</button>
+                <button data-action="copyCode">Copy Code</button>
+                <div id="copyStatus"></div>
+            </div>
+
+            <div class="collection-info">
+                <h3>Characteristics</h3>
+                <ul id="collectionCharacteristics">
+                    <li>Select a collection type to see its properties</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Comparison Benchmark</h2>
+            <div class="benchmark-tool">
+                <select id="benchmarkCollection1" class="collection-selector">
+                    <option value="arraylist">ArrayList</option>
+                    <option value="linkedlist">LinkedList</option>
+                    <option value="hashset">HashSet</option>
+                </select>
+                <span>vs</span>
+                <select id="benchmarkCollection2" class="collection-selector">
+                    <option value="linkedlist">LinkedList</option>
+                    <option value="arraylist">ArrayList</option>
+                    <option value="treeset">TreeSet</option>
+                </select>
+
+                <select id="benchmarkOperation">
+                    <option value="add1000">Add 1000 elements</option>
+                    <option value="insertMiddle">Insert at middle</option>
+                    <option value="search">Search element</option>
+                    <option value="iterate">Iterate all elements</option>
+                </select>
+
+                <button data-action="runBenchmark">Run Benchmark</button>
+
+                <div class="benchmark-results">
+                    <div class="benchmark-bar-container">
+                        <div class="benchmark-bar-label">Collection 1</div>
+                        <div class="benchmark-bar" id="benchmarkBar1"></div>
+                        <div class="benchmark-time" id="benchmarkTime1">0ms</div>
+                    </div>
+                    <div class="benchmark-bar-container">
+                        <div class="benchmark-bar-label">Collection 2</div>
+                        <div class="benchmark-bar" id="benchmarkBar2"></div>
+                        <div class="benchmark-time" id="benchmarkTime2">0ms</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
